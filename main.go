@@ -48,6 +48,11 @@ func main() {
 		handlers.GetProductByName(c, products)
 	})
 
+	//AddNewProduct
+	r.POST("/products", func(c *gin.Context) {
+		handlers.AddNewProduct(c, &products)
+	})
+
 	// Ejecuta el servidor en el puerto 8080
 	r.Run(":8080")
 }
